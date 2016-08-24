@@ -19,7 +19,7 @@ module.exports = {
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.js"),
-        HTMLWebpackPluginConfig,
+        HTMLWebpackPluginConfig
     ],
     module: {
         loaders: [
@@ -31,13 +31,15 @@ module.exports = {
             {
                 test: /\.scss$/,
                 loaders: ["style", "css", "sass"],
-                include: path.join(__dirname, 'src/styles')
+                include: path.join(__dirname, '')
             },
-            {test: /\.woff$/, loader: "url-loader?limit=10000&minetype=application/font-woff"},
-            {test: /\.woff2$/, loader: "url-loader?limit=10000&minetype=application/font-woff"},
-            {test: /\.ttf$/, loader: "file-loader"},
-            {test: /\.eot$/, loader: "file-loader"},
-            {test: /\.svg$/, loader: "file-loader"}
+            {test: /\.jpg$/, loader: "url-loader", query: {mimetype: "image/jpg"}},
+            {test: /\.png$/, loader: "url-loader", query: {mimetype: "image/png"}},
+            {test: /\.woff.*$/, loader: "url-loader?limit=10000&minetype=application/font-woff"},
+            {test: /\.ttf.*$/, loader: "file-loader"},
+            {test: /\.eot.*$/, loader: "file-loader"},
+            {test: /\.svg.*$/, loader: "file-loader"}
+
 
         ]
     }

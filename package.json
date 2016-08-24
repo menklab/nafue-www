@@ -12,14 +12,15 @@
   "scripts": {
     "start": "npm run dev",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --progress --colors --inline --watch --hot --content-base=src",
+    "dev": "webpack-dev-server --progress --colors --inline --watch --hot --devtool source-map --history-api-fallback",
     "publish": "webpack -p"
   },
   "dependencies": {
+    "bootstrap-sass": "^3.3.7",
     "react": "^15.3.0",
+    "react-bootstrap": "^0.30.3",
     "react-dom": "^15.3.0",
-    "react-router": "^2.6.1",
-    "bootstrap-sass": "^3.3.7"
+    "react-router": "^2.6.1"
   },
   "devDependencies": {
     "babel-core": "^6.13.2",

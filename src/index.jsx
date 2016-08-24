@@ -1,27 +1,38 @@
 'use strict';
 
-require('./styles/fonts.scss');
-require('./styles/vendor.scss');
-require('./styles/app.scss');
+require('../styles/fonts.scss');
+require('../styles/vendor.scss');
+require('../styles/app.scss');
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Grid, Row, Col} from 'react-bootstrap'
 import {browserHistory, Router, Route, IndexRoute } from 'react-router'
 
-// setup history
+import MainNavigation from './modules/navigation/navigation_main.jsx';
 
-var MainLayout = React.createClass({
-    render: function () {
+class MainLayout extends React.Component {
+    render() {
         return (
-            <h1>Drop file here</h1>
+            <Grid>
+                <MainNavigation />
+                <Row>
+                    <h1>Hi</h1>
+                </Row>
+            </Grid>
         );
     }
-});
+}
 
 ReactDOM.render(
     <Router history={browserHistory}>
-        <Route path="/" component={MainLayout}>
-            
+        <Route component={MainLayout}>
+            <Route path="/">
+            </Route>
+            <Route path="/how-it-works">
+            </Route>
+            <Route path="/apps">
+            </Route>
         </Route>
     </Router>
     , document.getElementById('root'));
