@@ -2,6 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
+
 var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
     template: __dirname + '/src/index.html',
     filename: 'index.html',
@@ -9,13 +10,15 @@ var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
 });
 
 module.exports = {
-    entry: [
-        './src/index.jsx'
-    ],
+    entry: {
+        app: './src/index.jsx',
+        vendor: ['react', 'react-dom', 'react-router']
+    },
     output: {
-        filename: "index_bundle.js",
+        filename: "app.js"
     },
     plugins: [
+        new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.js"),
         HTMLWebpackPluginConfig,
     ],
     module: {
@@ -28,8 +31,14 @@ module.exports = {
             {
                 test: /\.scss$/,
                 loaders: ["style", "css", "sass"],
-                include: path.join(__dirname, 'src')
-            }
+                include: path.join(__dirname, 'src/styles')
+            },
+            {test: /\.woff$/, loader: "url-loader?limit=10000&minetype=application/font-woff"},
+            {test: /\.woff2$/, loader: "url-loader?limit=10000&minetype=application/font-woff"},
+            {test: /\.ttf$/, loader: "file-loader"},
+            {test: /\.eot$/, loader: "file-loader"},
+            {test: /\.svg$/, loader: "file-loader"}
+
         ]
     }
 };
