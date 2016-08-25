@@ -1,3 +1,7 @@
 @import './fonts.scss';
 @import './vendor.scss';
 @import './app.scss';
+
+// modules
+@import '../src/modules/footer/footer.scss';
+@import '../src/modules/navigation/navigation_main.scss';

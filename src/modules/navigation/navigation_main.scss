@@ -1,4 +1,18 @@
 .nafue-header {
   border-color: #fff;
   background-color: #fff;
+
+  .navbar-nav {
+    color: #777;
+    li {
+      a {
+        text-decoration: underline;
+        font-size: 16px;
+        &:hover,:focus {
+          text-decoration: underline;
+          color: #999;
+        }
+      }
+    }
+  }
 }

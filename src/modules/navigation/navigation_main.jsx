@@ -9,7 +9,7 @@ export class MainNavigation extends React.Component {
             <Navbar fixedTop className="nafue-header">
                 <Navbar.Header >
                     <Navbar.Brand>
-                        <a href="">Nafue</a>
+                       <p>Nafue</p>
                     </Navbar.Brand>
                     <Navbar.Toggle />
                 </Navbar.Header>

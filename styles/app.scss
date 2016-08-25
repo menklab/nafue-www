@@ -1,4 +1,9 @@
+a {
+  color: #777;
+  text-decoration: underline;
+}
 
-// modules
-@import '../src/modules/footer/footer.scss';
-@import '../src/modules/navigation/navigation_main.scss';
+a:hover {
+  color: #999;
+  text-decoration: underline;
+}
