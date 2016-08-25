@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+//var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
 var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
@@ -19,6 +20,9 @@ module.exports = {
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.js"),
+        //new ExtractTextPlugin('./style.css', {
+        //    allChunks: true
+        //}),
         HTMLWebpackPluginConfig
     ],
     module: {
@@ -31,7 +35,9 @@ module.exports = {
             {
                 test: /\.scss$/,
                 loaders: ["style", "css", "sass"],
+                //loaders: [ExtractTextPlugin.extract('style', 'css!sass')],
                 include: path.join(__dirname, '')
+
             },
             {test: /\.jpg$/, loader: "url-loader", query: {mimetype: "image/jpg"}},
             {test: /\.png$/, loader: "url-loader", query: {mimetype: "image/png"}},
@@ -39,7 +45,6 @@ module.exports = {
             {test: /\.ttf.*$/, loader: "file-loader"},
             {test: /\.eot.*$/, loader: "file-loader"},
             {test: /\.svg.*$/, loader: "file-loader"}
-
 
         ]
     }

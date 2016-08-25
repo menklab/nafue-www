@@ -3,14 +3,11 @@
 import React from 'react';
 import {Navbar, NavItem, MenuItem, Nav, NavDropdown} from 'react-bootstrap'
 
-require('./navigation_main.scss');
-
-
-export default class MainNavigation extends React.Component {
+export class MainNavigation extends React.Component {
     render() {
         return (
-            <Navbar fixedTop>
-                <Navbar.Header>
+            <Navbar fixedTop className="nafue-header">
+                <Navbar.Header >
                     <Navbar.Brand>
                         <a href="">Nafue</a>
                     </Navbar.Brand>
