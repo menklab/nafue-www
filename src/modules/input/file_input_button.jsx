@@ -10,7 +10,7 @@ export class FileInputButton extends React.Component {
     render() {
         return (
             <div className="dropSelect">
-                <input className="inputfile" type="file" id="file" name="files[]" onChange={this.props.onFileSelected}/>
+                <input className="inputfile" type="file" id="file" name="files[]" onChange={this.props.handleFileSelected}/>
                 <label htmlFor="file">Choose a file...</label>
             </div>
         );

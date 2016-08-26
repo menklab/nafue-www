@@ -8,19 +8,20 @@ import {FileInputDropZone} from '../../modules/input/file_input_dropzone.jsx'
 export class HomePage extends React.Component {
     constructor(props) {
         super(props);
-        this.onFileSelected = this.handleFileSelected.bind(this);
+        this.handleFileSelected = this.handleFileSelected.bind(this);
     }
     render() {
         return (
             <div className="row">
                 <div className="col-md-8 col-md-push-2 center-block">
-                   <FileInputDropZone onFileSelected={this.handleFileSelected}/>
+                   <FileInputDropZone handleFileSelected={this.handleFileSelected}/>
                 </div>
             </div>
         );
     }
 
     handleFileSelected(e) {
+        console.log("hi");
         e.stopPropagation();
         e.preventDefault();
         var files;
