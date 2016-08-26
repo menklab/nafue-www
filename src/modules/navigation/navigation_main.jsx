@@ -5,7 +5,7 @@ import React from 'react';
 export class MainNavigation extends React.Component {
     render() {
         return (
-            <div>
+            <div className="container-fluid">
                 {/* mobile header */}
                 <div className="row visible-xs header-padding-top">
                     <div className="col-xs-12">

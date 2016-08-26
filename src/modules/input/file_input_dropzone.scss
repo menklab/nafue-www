@@ -1,0 +1,32 @@
+.dropZone {
+  width: 100%;
+  border: 2px dashed #999;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 25px;
+  text-align: center;
+  color: #999;
+
+}
+@media (min-width: 777px) {
+  .dropZone {
+    height: 250px;
+  }
+}
+
+.dropZone h3 {
+  padding: 50px 0;
+  clear: both;
+  font-weight: 400;
+}
+
+.dropSelect {
+  float: left;
+}
+.dropZone-file-hover {
+  background-color: #f4f4f4;
+}
+.no-point-events {
+  pointer-events: none;
+}
