@@ -14,13 +14,14 @@ export class FileInputDropZone extends React.Component {
         this.handleDragOver = this.handleDragOver.bind(this);
         this.handleDragEnter = this.handleDragEnter.bind(this);
         this.handleDragLeave = this.handleDragLeave.bind(this);
+        this.handleFileSelected = this.handleFileSelected.bind(this);
     }
 
     componentDidMount() {
         this.refs.dz.addEventListener('dragenter', this.handleDragEnter);
         this.refs.dz.addEventListener('dragleave', this.handleDragLeave);
         this.refs.dz.addEventListener('dragover', this.handleDragOver);
-        this.refs.dz.addEventListener('drop', this.props.handleFileSelected);
+        this.refs.dz.addEventListener('drop', this.handleFileSelected);
 
     }
 
@@ -28,7 +29,7 @@ export class FileInputDropZone extends React.Component {
         this.refs.dz.removeEventListener("dragenter", this.handleDragEnter);
         this.refs.dz.removeEventListener("dragleave", this.handleDragLeave);
         this.refs.dz.removeEventListener("dragover", this.handleDragOver);
-        this.refs.dz.removeEventListener('drop', this.props.handleFileSelected);
+        this.refs.dz.removeEventListener('drop', this.handleFileSelected);
     }
 
     render() {
@@ -46,6 +47,11 @@ export class FileInputDropZone extends React.Component {
             return (baseClass + " dropZone-file-hover");
         }
         return baseClass
+    }
+
+    handleFileSelected(e) {
+        this.setState({ activeHover: false });
+        this.props.handleFileSelected(e);
     }
 
     handleDragOver(e) {
