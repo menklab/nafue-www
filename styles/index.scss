@@ -1,6 +1,13 @@
-@import './fonts.scss';
-@import './vendor.scss';
-@import './app.scss';
+@import './bootstrap-grid.css';
+@import './layout.css';
+@import './text.css';
+@import './busy-loader.css';
+@import './button.css';
+@import './homepage.css';
+@import './progressBar.css';
+@import './input.css';
+@import './app.css';
+@import './icomoon.css';
 
 // modules
 @import '../src/modules/footer/footer.scss';

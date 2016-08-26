@@ -5,7 +5,6 @@ require('../styles/index.scss');
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Grid, Row, Col} from 'react-bootstrap'
 import {browserHistory, Router, Route, IndexRoute } from 'react-router'
 
 import {MainNavigation} from './modules/navigation/navigation_main.jsx';
@@ -14,13 +13,10 @@ import {Footer} from './modules/footer/footer.jsx';
 class MainLayout extends React.Component {
     render() {
         return (
-            <Grid>
+            <div>
                 <MainNavigation />
-                <Row>
-                    <h1>Hi</h1>
-                </Row>
                 <Footer />
-            </Grid>
+            </div>
         );
     }
 }

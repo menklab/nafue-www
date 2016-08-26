@@ -16,9 +16,7 @@
     "publish": "webpack -p"
   },
   "dependencies": {
-    "bootstrap-sass": "^3.3.7",
     "react": "^15.3.0",
-    "react-bootstrap": "^0.30.3",
     "react-dom": "^15.3.0",
     "react-router": "^2.6.1"
   },

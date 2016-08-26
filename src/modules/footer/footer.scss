@@ -1,12 +1,29 @@
-.nafue-footer {
+.footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  height: 50px;
   background-color: #dbd5d5;
-  border-color: #dbd5d5;
+}
 
-  .footer-text-padding {
-    padding-top: 15px;
+@media (max-width: 767px) {
+  .footer {
+    position: absolute;
+    height: 140px;
+    background-color: #dbd5d5;
+    margin: 16px 0 0 0;
+    color: #535353;
 
-    i {
-      font-size: 20px;
+    p {
+      padding: 0;
+      margin: 6px 0 0 0;
     }
   }
+}
+
+.footer-floating {
+  height: 48px;
+  color: #535353;
+  font-size: 14px;
 }
