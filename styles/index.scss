@@ -9,11 +9,6 @@
 @import './app.css';
 @import './icomoon.css';
 
-// modules
-@import '../src/modules/footer/footer.scss';
-@import '../src/modules/navigation/navigation_main.scss';
-@import '../src/modules/input/file_input_button.scss';
-@import '../src/modules/input/file_input_dropzone.scss';
-
-// pages
-@import '../src/pages/home/home.scss';
+// components & containers
+@import '../src/components/index.scss';
+@import '../src/containers/index.scss';

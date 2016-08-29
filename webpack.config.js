@@ -13,7 +13,7 @@ var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
 module.exports = {
     entry: {
         app: './src/index.jsx',
-        vendor: ['react', 'react-dom', 'react-router']
+        vendor: ['react', 'react-dom', 'react-router', 'react-redux']
     },
     output: {
         filename: "app.js"

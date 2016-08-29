@@ -9,7 +9,7 @@ export class FileInputDropZone extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { activeHover: false};
+        this.state = {activeHover: false};
         this.getDropZoneClass = this.getDropZoneClass.bind(this);
         this.handleDragOver = this.handleDragOver.bind(this);
         this.handleDragEnter = this.handleDragEnter.bind(this);
@@ -35,7 +35,7 @@ export class FileInputDropZone extends React.Component {
     render() {
         return (
             <div id="dropZone" ref="dz" className={this.getDropZoneClass()}>
-                {!this.state.activeHover ? <FileInputButton handleFileSelected={this.props.handleFileSelected}/> : null }
+                <FileInputButton className={!this.state.activeHover ? "dropSelect" : "dropSelect no-point-events"} handleFileSelected={this.props.handleFileSelected}/>
                 <h3 className="hidden-xs no-point-events">Drop file here</h3>
             </div>
         );
@@ -50,7 +50,7 @@ export class FileInputDropZone extends React.Component {
     }
 
     handleFileSelected(e) {
-        this.setState({ activeHover: false });
+        this.setState({activeHover: false});
         this.props.handleFileSelected(e);
     }
 
@@ -61,13 +61,13 @@ export class FileInputDropZone extends React.Component {
     }
 
     handleDragEnter(e) {
-        this.setState({ activeHover: true });
+        this.setState({activeHover: true});
         e.stopPropagation();
         e.preventDefault();
     }
 
     handleDragLeave(e) {
-        this.setState({ activeHover: false });
+        this.setState({activeHover: false});
         e.stopPropagation();
         e.preventDefault();
     }

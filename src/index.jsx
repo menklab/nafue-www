@@ -6,10 +6,19 @@ require('../styles/index.scss');
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {browserHistory, Router, Route, IndexRoute } from 'react-router'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import {app} from './reducers.jsx'
+import {MainNavigation} from './components/parts/navigation/navigation_main.jsx';
+import {Footer} from './components/parts/footer/footer.jsx';
+import {HomePage} from './components/pages/home/home.jsx';
+let store = createStore(app);
 
-import {MainNavigation} from './modules/navigation/navigation_main.jsx';
-import {Footer} from './modules/footer/footer.jsx';
-import {HomePage} from './pages/home/home.jsx';
+// log state
+console.log(store.getState());
+let unsubscribe = store.subscribe(() =>
+    console.log(store.getState())
+);
 
 class MainLayout extends React.Component {
     render() {
@@ -52,15 +61,19 @@ class MainLayout extends React.Component {
 }
 
 ReactDOM.render(
-    <Router history={browserHistory}>
-        <Route component={MainLayout}>
-            <Route path="/">
-                <IndexRoute component={HomePage}/>
+    <Provider store={store}>
+        <Router history={browserHistory}>
+            <Route component={MainLayout}>
+                <Route path="/">
+                    <IndexRoute component={HomePage}/>
+                </Route>
+                <Route path="/passwordPrompt">
+                </Route>
+                <Route path="/how-it-works">
+                </Route>
+                <Route path="/apps">
+                </Route>
             </Route>
-            <Route path="/how-it-works">
-            </Route>
-            <Route path="/apps">
-            </Route>
-        </Route>
-    </Router>
+        </Router>
+    </Provider>
     , document.getElementById('root'));

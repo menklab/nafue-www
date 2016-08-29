@@ -2,7 +2,9 @@
 
 import React from 'react';
 
-import {FileInputDropZone} from '../../modules/input/file_input_dropzone.jsx'
+import {FileInputDropZone} from '../../pieces/input/file_input_dropzone.jsx'
+import { browserHistory } from 'react-router'
+import { encryptFile } from '../../../actions.jsx'
 
 
 export class HomePage extends React.Component {
@@ -21,9 +23,10 @@ export class HomePage extends React.Component {
     }
 
     handleFileSelected(e) {
-        console.log("hi");
         e.stopPropagation();
         e.preventDefault();
+        const {dispatch} = this.props;
+        console.log("e: ", e);
         var files;
         if (!!e.dataTransfer && !!e.dataTransfer.files) {
             files = e.dataTransfer.files;
@@ -40,6 +43,9 @@ export class HomePage extends React.Component {
         }
 
         var file = files[0];
-        console.log("file: ", file);
+
+        // move to processing
+        dispatch(encryptFile(input.value));
+        browserHistory.push('/passwordPrompt');
     }
 }
