@@ -9,7 +9,6 @@ function encryptFile(state = {}, action) {
             return Object.assign({}, state, {
                 file: action.file
             });
-
             break;
         default:
             return state;

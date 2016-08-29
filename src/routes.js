@@ -1,9 +1,13 @@
 import React from 'react'
-import { Route } from 'react-router'
-import App from './containers/app'
+import { Route, IndexRoute } from 'react-router'
+import MainLayout from './containers/MainLayout'
+import HomePage from './containers/pages/homePage/homePage';
+
 
 export default (
-    <Route path="/" component={App}>
-
+    <Route component={MainLayout}>
+            <Route path="/">
+                <IndexRoute component={HomePage}/>
+            </Route>
     </Route>
 )

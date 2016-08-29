@@ -33,11 +33,6 @@
 .slim-top-margin {
     margin-top: 5px;
 }
-.for-site-indexing {
-    height: 0;
-    width: 0;
-    opacity: 0;
-}
 
 .full-width {
     width: 100%;

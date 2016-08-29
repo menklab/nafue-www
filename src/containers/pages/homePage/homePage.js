@@ -1,12 +1,9 @@
 'use strict';
 
 import React from 'react';
-
-import {FileInputDropZone} from '../../pieces/input/file_input_dropzone.jsx'
-import { browserHistory } from 'react-router'
-import { encryptFile } from '../../../actions.jsx'
+import FileInputDropZone from '../../../components/pieces/input/file_input_dropzone.js'
 import { connect } from 'react-redux'
-
+import { encryptFile } from '../../../actions'
 
 
 class HomePage extends React.Component {
@@ -14,24 +11,30 @@ class HomePage extends React.Component {
         super(props);
         this.handleFileSelected = this.handleFileSelected.bind(this);
     }
+
     render() {
-        const {dispatch} = this.props;
-        console.log("dispatch: ", dispatch);
         return (
-            <div className="row">
-                <div className="col-md-8 col-md-push-2 center-block">
-                   <FileInputDropZone handleFileSelected={this.handleFileSelected}/>
+            <div>
+                <div className="for-site-indexing no-select">
+                    <h1>Nafue</h1>
+                    <p>Anonymous, secure file transfers that self destruct after first use or 24 hours using
+                        client side
+                        encryption.</p>
+                </div>
+                <div className="row">
+                    <div className="col-md-8 col-md-push-2 center-block">
+                        <FileInputDropZone handleFileSelected={this.handleFileSelected}/>
+                    </div>
                 </div>
             </div>
         );
     }
 
 
-    handleFileSelected(e) {
+     handleFileSelected(e) {
         e.stopPropagation();
         e.preventDefault();
-        console.log("props2: ", this.props);
-        const {dispatch} = this.props;
+
         var files;
         if (!!e.dataTransfer && !!e.dataTransfer.files) {
             files = e.dataTransfer.files;
@@ -50,8 +53,8 @@ class HomePage extends React.Component {
         var file = files[0];
 
         // move to processing
-        dispatch(encryptFile(file));
-        browserHistory.push('/passwordPrompt');
+        encryptFile(file);
+        //browserHistory.push('/passwordPrompt');
     }
 }
 
@@ -60,3 +63,5 @@ function mapStateToProps(state) {
         encryptFile
     }
 }
+
+export default connect(mapStateToProps, {})(HomePage);

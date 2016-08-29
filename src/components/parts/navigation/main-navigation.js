@@ -3,6 +3,11 @@
 import React from 'react';
 
 class MainNavigation extends React.Component {
+    constructor(props) {
+        super(props);
+        const showHome = this.props.showHome;
+    }
+
     render() {
         return (
             <div className="container-fluid">

@@ -2,10 +2,10 @@
 
 import React from 'react';
 
-import {FileInputButton} from './file_input_button.jsx'
+import FileInputButton from './file_input_button.js'
 
 
-export class FileInputDropZone extends React.Component {
+class FileInputDropZone extends React.Component {
 
     constructor(props) {
         super(props);
@@ -72,3 +72,5 @@ export class FileInputDropZone extends React.Component {
         e.preventDefault();
     }
 }
+
+export default FileInputDropZone;
