@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-export class MainNavigation extends React.Component {
+class MainNavigation extends React.Component {
     render() {
         return (
             <div className="container-fluid">
@@ -39,3 +39,4 @@ export class MainNavigation extends React.Component {
         );
     }
 }
+export default MainNavigation;

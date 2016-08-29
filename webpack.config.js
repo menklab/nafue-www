@@ -12,8 +12,8 @@ var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
 
 module.exports = {
     entry: {
-        app: './src/index.jsx',
-        vendor: ['react', 'react-dom', 'react-router', 'react-redux']
+        app: './src/index.js',
+        vendor: ['react', 'react-dom', 'react-router', 'react-redux', 'redux-thunk']
     },
     output: {
         filename: "app.js"
@@ -28,7 +28,7 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: /\.jsx$/,
+                test: /\.js$/,
                 loaders: ['react-hot', 'babel'],
                 include: path.join(__dirname, 'src')
             },

@@ -1,14 +1,10 @@
-@import './bootstrap-grid.css';
-@import './layout.css';
-@import './text.css';
-@import './busy-loader.css';
-@import './button.css';
-@import './homepage.css';
-@import './progressBar.css';
-@import './input.css';
-@import './app.css';
-@import './icomoon.css';
-
-// components & containers
-@import '../src/components/index.scss';
-@import '../src/containers/index.scss';
+@import 'bootstrap-grid';
+@import 'layout';
+@import 'text';
+@import 'busy-loader';
+@import 'button';
+@import 'homepage';
+@import 'progressBar';
+@import 'input';
+@import 'app';
+@import 'icomoon';
