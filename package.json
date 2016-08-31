@@ -7,7 +7,7 @@
     "url": "https://github.com/menkveldj/menklab"
   },
   "version": "0.0.1",
-  "description": "Menklab WWW",
+  "description": "Nafue WWW",
   "main": "index.html",
   "scripts": {
     "start": "npm run dev",

@@ -1,9 +1,10 @@
-export const ENCRYPT_FILE = 'ENCRYPT_FILE';
+export const SELECT_FILE = 'SELECT_FILE';
 
-export function encryptFile(file) {
-    console.log("encrypt file: ", file);
+export function selectFile(file) {
+    console.log("select file: ", file);
     return {
-        type: ENCRYPT_FILE,
+        type: SELECT_FILE,
         file: file
     }
+
 }

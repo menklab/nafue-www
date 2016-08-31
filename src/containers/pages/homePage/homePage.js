@@ -1,9 +1,10 @@
 'use strict';
 
 import React from 'react';
+import { browserHistory } from 'react-router'
 import FileInputDropZone from '../../../components/pieces/input/file_input_dropzone.js'
 import { connect } from 'react-redux'
-import { encryptFile } from '../../../actions'
+import { selectFile } from '../../../actions'
 
 
 class HomePage extends React.Component {
@@ -52,15 +53,16 @@ class HomePage extends React.Component {
 
         var file = files[0];
 
-        // move to processing
-        encryptFile(file);
-        //browserHistory.push('/passwordPrompt');
+        // getPassword
+        selectFile(file);
+         console.log(this);
+        browserHistory.push('/passwordPrompt');
     }
 }
 
 function mapStateToProps(state) {
     return {
-        encryptFile
+        selectFile
     }
 }
 
