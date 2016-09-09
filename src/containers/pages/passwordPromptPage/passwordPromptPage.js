@@ -21,7 +21,6 @@ class PasswordPromptPage extends React.Component {
                 <div className="row">
                     <div className="col-md-8 col-md-push-2 center-block">
                         <PasswordInput onPasswordChange={this.handlePasswordChange}/>
-                        <p>{this.state.passwordObject.score}</p>
                         <PasswordStrengthIndicator strength={this.state.passwordObject.score} />
                     </div>
                 </div>
