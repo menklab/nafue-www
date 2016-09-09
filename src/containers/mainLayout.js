@@ -7,7 +7,6 @@ import Footer from '../components/parts/footer/footer'
 class MainLayout extends React.Component {
     constructor(props) {
         super(props);
-        console.log("location: ", this.props.location.pathname);
     }
 
     render() {

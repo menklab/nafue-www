@@ -4,6 +4,6 @@
 @import './parts/seoPara/seoPara';
 
 // pieces
-@import './pieces/input/file_input_button.scss';
-@import './pieces/input/file_input_dropzone.scss';
+@import 'pieces/input/fileInput/file_input_button';
+@import 'pieces/input/fileInput/file_input_dropzone';
 

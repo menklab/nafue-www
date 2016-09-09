@@ -2,13 +2,17 @@
 
 import React from 'react';
 import { connect } from 'react-redux'
-//import { selectFile } from '../../../actions'
-
+import zxcvbn from 'zxcvbn';
+import PasswordInput from '../../../components/pieces/input/passwordInput/password_input'
+import PasswordStrengthIndicator from '../../../components/pieces/input/passwordInput/password_strength_indicator'
 
 class PasswordPromptPage extends React.Component {
     constructor(props) {
         super(props);
-        //this.handleFileSelected = this.handleFileSelected.bind(this);
+        this.handlePasswordChange = this.handlePasswordChange.bind(this);
+        this.state = {
+            passwordObject: ""
+        }
     }
 
     render() {
@@ -16,45 +20,24 @@ class PasswordPromptPage extends React.Component {
             <div>
                 <div className="row">
                     <div className="col-md-8 col-md-push-2 center-block">
-                        <p>password prompt</p>
+                        <PasswordInput onPasswordChange={this.handlePasswordChange}/>
+                        <p>{this.state.passwordObject.score}</p>
+                        <PasswordStrengthIndicator strength={this.state.passwordObject.score} />
                     </div>
                 </div>
             </div>
         );
     }
 
+    handlePasswordChange(e) {
+        var passwordObject = zxcvbn(e.target.value);
+        this.setState({passwordObject: passwordObject});
+    }
 
-    //handleFileSelected(e) {
-    //    e.stopPropagation();
-    //    e.preventDefault();
-    //
-    //    var files;
-    //    if (!!e.dataTransfer && !!e.dataTransfer.files) {
-    //        files = e.dataTransfer.files;
-    //    }
-    //
-    //    if (!!e.target && !!e.target.files) {
-    //        files = e.target.files;
-    //    }
-    //
-    //    // only 1 file at a time
-    //    if (files.length > 1) {
-    //        error("Only 1 file at a time.");
-    //        return;
-    //    }
-    //
-    //    var file = files[0];
-    //
-    //    // getPassword
-    //    selectFile(file);
-    //    console.log(this);
-    //    //browserHistory.push('/passwordPrompt');
-    //}
 }
 
 function mapStateToProps(state) {
     return {
-        //selectFile
     }
 }
 
