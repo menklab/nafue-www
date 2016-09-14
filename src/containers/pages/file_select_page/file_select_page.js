@@ -2,9 +2,9 @@
 
 import React from 'react';
 import { browserHistory } from 'react-router'
-import FileInputDropZone from '../../../components/pieces/input/fileInput/file_input_dropzone.js'
+import FileInputDropZone from '../../../components/pieces/input/file_input/file_input_dropzone.js'
 import { connect } from 'react-redux'
-import { selectFile } from '../../../actions'
+import { fileSelected } from '../../../actions'
 
 
 class FileSelectPage extends React.Component {
@@ -54,16 +54,17 @@ class FileSelectPage extends React.Component {
         var file = files[0];
 
         // getPassword
-        selectFile(file);
-        console.log(this);
+        this.props.fileSelected(file);
         browserHistory.push('/passwordPrompt');
     }
 }
 
 function mapStateToProps(state) {
     return {
-        selectFile
+
     }
 }
 
-export default connect(mapStateToProps, {})(FileSelectPage);
+export default connect(mapStateToProps, {
+    fileSelected
+})(FileSelectPage);

@@ -10,11 +10,6 @@ class PasswordInput extends React.Component {
         };
         this.handlePasswordChange = this.handlePasswordChange.bind(this);
     }
-    //componentWillReceiveProps(nextProps) {
-    //    if (!!nextProps.className) {
-    //        this.setState({className: nextProps.className});
-    //    }
-    //}
 
     render() {
         return (
@@ -37,7 +32,6 @@ class PasswordInput extends React.Component {
     }
 
     handlePasswordChange(e) {
-        console.log("update: ", e.target.value);
         this.props.onPasswordChange(e);
     }
 }

@@ -1,8 +1,8 @@
 import React from 'react'
 import { Route, IndexRoute } from 'react-router'
-import MainLayout from './containers/MainLayout'
-import FileSelectPage from './containers/pages/fileSelectPage/fileSelectPage';
-import PasswordPromptPage from './containers/pages/passwordPromptPage/passwordPromptPage';
+import MainLayout from './containers/main_layout'
+import FileSelectPage from './containers/pages/file_select_page/file_select_page';
+import PasswordPromptPage from './containers/pages/password_prompt_page/password_prompt_page';
 
 
 export default (

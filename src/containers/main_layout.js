@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
-import MainNavigation from '../components/parts/navigation/main-navigation'
+import MainNavigation from '../components/parts/navigation/main_navigation'
 import Footer from '../components/parts/footer/footer'
 
 
