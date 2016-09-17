@@ -2,7 +2,6 @@
 
 import React from 'react';
 import zxcvbn from 'zxcvbn';
-import AnimateOnChange from 'react-animate-on-change'
 
 class PasswordStrengthIndicator extends React.Component {
     constructor(props) {

@@ -2,8 +2,8 @@ import * as ActionTypes from '../actions'
 import { routerReducer as routing } from 'react-router-redux'
 import { combineReducers } from 'redux'
 
-const MODE_ENCRYPT = 1;
-const MODE_DECRYPT = 2;
+export const MODE_ENCRYPT = 1;
+export const MODE_DECRYPT = 2;
 
 const initialState = {
     mode: MODE_ENCRYPT
