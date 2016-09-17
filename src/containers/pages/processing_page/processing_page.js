@@ -5,35 +5,61 @@ import { connect } from 'react-redux'
 import { browserHistory } from 'react-router'
 import { MODE_ENCRYPT, MODE_DECRYPT } from '../../../reducers/index'
 import  BusyLoader from '../../../components/pieces/busy_loader/busy_loader'
+import { fetchFileHeader } from '../../../actions'
 
 
 class ProcessingPage extends React.Component {
     constructor(props) {
         super(props);
-        if (!this.props.file) {
-            //browserHistory.push('/');
+        this.getLoaderMessage = this.getLoaderMessage.bind(this);
+
+        // if we are sharing
+        if (this.props.mode == MODE_ENCRYPT) {
+            if (!this.props.file || !this.props.password) {
+                browserHistory.push('/');
+            }
+        }
+        // else we are retrieving
+        else {
+
         }
 
-        this.state = {
-            //passwordObject: ""
-        };
+
+        this.state = {};
+    }
+
+    componentDidMount() {
+        if (this.props.mode == MODE_ENCRYPT) {
+            console.log("try file header request...");
+            this.props.fetchFileHeader({});
+        }
+        else {
+
+        }
     }
 
     render() {
         return (
             <div>
-                <BusyLoader message="test" />
+                <BusyLoader message={this.getLoaderMessage()}/>
             </div>
         );
+    }
+
+    getLoaderMessage() {
+        return "Test";
     }
 }
 
 function mapStateToProps(state) {
     return {
-        file: state.encrypt.file,
-        mode: state.encrypt.mode
+        file: state.secure.file,
+        mode: state.secure.mode,
+        password: state.secure.password
     }
 }
 
 
-export default connect(mapStateToProps, {})(ProcessingPage);
+export default connect(mapStateToProps, {
+    fetchFileHeader
+})(ProcessingPage);

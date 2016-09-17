@@ -55,8 +55,8 @@ class PasswordPromptPage extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        file: state.encrypt.file,
-        mode: state.encrypt.mode
+        file: state.secure.file,
+        mode: state.secure.mode
     }
 }
 

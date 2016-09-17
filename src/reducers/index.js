@@ -9,7 +9,7 @@ const initialState = {
     mode: MODE_ENCRYPT
 };
 
-function encrypt(state = initialState, action) {
+function secure(state = initialState, action) {
     switch (action.type) {
         case ActionTypes.FILE_SELECTED:
             return Object.assign({}, state, {
@@ -27,8 +27,45 @@ function encrypt(state = initialState, action) {
     }
 }
 
+function fileAttributes(state = {
+    isFetching: false,
+    fileChunks: [],
+    fileHeader: {}
+}, action) {
+
+    switch (action.type) {
+        case ActionTypes.POST_FILE_HEADER_REQ:
+            return Object.assign({}, state, {
+                isFetching: true
+            });
+        case ActionTypes.POST_FILE_HEADER_RES:
+            return Object.assign({}, state, {
+                isFetching: false,
+                fileChunks: action.fileChunks,
+                fileHeader: action.fileHeader
+            });
+        default:
+            return state;
+    }
+}
+
+function error(state = {
+    error: {}
+}, action) {
+    switch (action.type) {
+        case ActionTypes.ERROR:
+            return Object.assign({}, state, {
+                error: action.error
+            });
+        default:
+            return state;
+    }
+}
+
 const rootReducer = combineReducers({
-    encrypt,
+    secure,
+    fileAttributes,
+    error,
     routing
 });
 
