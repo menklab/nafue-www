@@ -2,9 +2,9 @@
 
 import React from 'react';
 import { browserHistory } from 'react-router'
-import FileInputDropZone from '../../../components/pieces/input/file_input/file_input_dropzone.js'
+import FileInputDropZone from './components/fileInput.Dropzone'
 import { connect } from 'react-redux'
-import { fileSelected } from '../../../actions'
+import { fileSelected } from './fileSelect.actions'
 
 
 class FileSelectPage extends React.Component {

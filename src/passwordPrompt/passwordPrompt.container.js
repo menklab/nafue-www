@@ -3,11 +3,11 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { browserHistory } from 'react-router'
-import { MODE_ENCRYPT, MODE_DECRYPT } from '../../../reducers/index'
+import { MODE_ENCRYPT, MODE_DECRYPT } from '../app/const'
 import zxcvbn from 'zxcvbn';
-import PasswordInput from '../../../components/pieces/input/password_input/password_input'
-import PasswordStrengthIndicator from '../../../components/pieces/input/password_input/password_strength_indicator'
-import { passwordEntered } from '../../../actions'
+import PasswordInput from '../components/pieces/input/password_input/password_input'
+import PasswordStrengthIndicator from '../components/pieces/input/password_input/password_strength_indicator'
+import { passwordEntered } from './passwordPrompt.actions'
 
 
 class PasswordPromptPage extends React.Component {
@@ -54,9 +54,10 @@ class PasswordPromptPage extends React.Component {
 }
 
 function mapStateToProps(state) {
+    console.log("state: ", state);
     return {
-        file: state.secure.file,
-        mode: state.secure.mode
+        file: state.fileSelect.file,
+        mode: state.fileSelect.mode
     }
 }
 

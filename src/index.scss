@@ -1,6 +1,8 @@
 // vendor and root level style
 @import '../styles/index.scss';
 
-// components & containers
-@import './components/index.scss';
-@import './containers/index.scss';
+// app
+@import './app/app';
+@import './fileSelect/fileSelect';
+@import './passwordPrompt/passwordPrompt';
+

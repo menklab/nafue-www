@@ -3,7 +3,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { browserHistory } from 'react-router'
-import { MODE_ENCRYPT, MODE_DECRYPT } from '../../../reducers/index'
+import { MODE_ENCRYPT, MODE_DECRYPT } from '../../../app/reducers'
 import  BusyLoader from '../../../components/pieces/busy_loader/busy_loader'
 import { fetchFileHeader } from '../../../actions'
 

@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import FileInputButton from './file_input_button.js'
+import FileInputButton from './fileInput.Button'
 
 
 class FileInputDropZone extends React.Component {

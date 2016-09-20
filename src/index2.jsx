@@ -10,7 +10,7 @@ import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import {app} from './reducers.jsx'
 import {MainNavigation} from './components/parts/navigation/navigation_main.jsx';
-import {Footer} from './components/parts/footer/footer.jsx';
+import {Footer} from 'app/layouts/footer/footer.jsx';
 import {HomePage} from './components/pages/home/home.jsx';
 let store = createStore(app);
 

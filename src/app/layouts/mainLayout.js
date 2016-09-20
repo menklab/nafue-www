@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
-import MainNavigation from '../components/parts/navigation/main_navigation'
-import Footer from '../components/parts/footer/footer'
+import MainNavigation from './navigation/navigation'
+import Footer from './footer/footer'
 
 
 class MainLayout extends React.Component {
