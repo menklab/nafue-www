@@ -13,7 +13,10 @@ var HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
 module.exports = {
     entry: {
         app: './src/index.js',
-        vendor: ['react', 'react-dom', 'react-router', 'react-redux', 'redux-thunk', 'zxcvbn', 'isomorphic-fetch', 'redux-logger']
+        vendor: [
+            'react', 'react-dom', 'react-router', 'react-redux',
+            'redux-thunk', 'zxcvbn', 'isomorphic-fetch', 'redux-logger'
+        ]
     },
     output: {
         filename: "app.js"
@@ -33,7 +36,7 @@ module.exports = {
                 include: path.join(__dirname, 'src')
             },
             {
-                test: /\.scss$/,
+                test: [/\.scss$/],
                 loaders: ["style", "css", "sass"],
                 //loaders: [ExtractTextPlugin.extract('style', 'css!sass')],
                 include: path.join(__dirname, '')

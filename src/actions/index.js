@@ -1,7 +1,8 @@
 'use strict';
 
-import fetch from 'isomorphic-fetch'
 import { browserHistory } from 'react-router'
+import { Post } from './api/fetch'
+
 
 export const FILE_SELECTED = 'FILE_SELECTED';
 export function fileSelected(file) {
@@ -50,30 +51,17 @@ export function fetchFileHeader(fileHeader) {
     return function (dispatch) {
         dispatch(postFileHeaderReq(fileHeader));
 
-        var req = {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            mode: 'cors',
-            cache: 'default',
+        var req = new Post('http://localhost:9090/api/files/async', {
             body: JSON.stringify({
                 chunkCount: 1
             })
-        };
-
-        return fetch('http://localhost:9090/api/files', req)
-            .then(
-                function (res) {
-                    if (res.status >= 400) {
-                        dispatch(error({status: res.status, message: res.message}));
-                        return;
-                    }
-                    res.json().then(
-                        function(json) {
-                            console.log("json: ", json);
-                        });
-                });
+        });
+        req.async(
+            function (data) { // success
+                console.log("Success: ", data);
+            },
+            function (err) { // fail
+                dispatch(error({status: err.status, message: err.message}));
+            });
     }
 }
