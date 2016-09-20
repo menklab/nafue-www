@@ -1,4 +1,4 @@
-import * as ActionTypes from './fileSelect.actions';
+import * as ActionTypes from './fileProcessing.actions';
 import {MODE_ENCRYPT} from '../utility/const'
 
 const initialState = {

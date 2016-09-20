@@ -3,9 +3,9 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { browserHistory } from 'react-router'
-import { MODE_ENCRYPT, MODE_DECRYPT } from '../app/reducers'
+import { MODE_ENCRYPT, MODE_DECRYPT } from '../utility/const'
 import  BusyLoader from './components/busyLoader'
-import { fetchFileHeader } from '../actions/index'
+import { fetchFileHeader } from './fileProcessing.actions'
 
 
 class ProcessingPage extends React.Component {
@@ -30,7 +30,6 @@ class ProcessingPage extends React.Component {
 
     componentDidMount() {
         if (this.props.mode == MODE_ENCRYPT) {
-            console.log("try file header request...");
             this.props.fetchFileHeader({});
         }
         else {
@@ -53,9 +52,9 @@ class ProcessingPage extends React.Component {
 
 function mapStateToProps(state) {
     return {
-        file: state.secure.file,
-        mode: state.secure.mode,
-        password: state.secure.password
+        file: state.fileSelect.file,
+        mode: state.fileSelect.mode,
+        password: state.passwordPrompt.password
     }
 }
 

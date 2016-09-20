@@ -3,7 +3,7 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { browserHistory } from 'react-router'
-import { MODE_ENCRYPT, MODE_DECRYPT } from '../app/const'
+import { MODE_ENCRYPT, MODE_DECRYPT } from '../utility/const'
 import zxcvbn from 'zxcvbn';
 import PasswordInput from './components/passwordInput'
 import PasswordStrengthIndicator from './components/passwordStrengthIndicator'

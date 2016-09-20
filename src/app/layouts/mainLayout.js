@@ -14,6 +14,12 @@ class MainLayout extends React.Component {
             <div>
                 <MainNavigation showHome={this.props.location.pathname == '/' ? true : false} />
                 <div className="container">
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
                     <div className="row">
                         <div className="col-md-8 col-md-push-2">
                             <div className="text-center">

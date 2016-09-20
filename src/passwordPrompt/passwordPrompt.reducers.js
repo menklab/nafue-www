@@ -1,11 +1,11 @@
-import * as PasswordPromptActions from './passwordPrompt.actions';
+import * as ActionTypes from './passwordPrompt.actions';
 
 const initialState = {
 };
 
 function passwordPromptReducer(state = initialState, action) {
     switch (action.type) {
-        case PasswordPromptActions.PASSWORD_ENTERED:
+        case ActionTypes.PASSWORD_ENTERED:
             return Object.assign({}, state, {
                 password: action.password
             });

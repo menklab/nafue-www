@@ -1,6 +1,6 @@
 'use strict';
 
-import { Post } from '../api/fetch'
+import { Post } from '../utility/fetch'
 
 export const POST_FILE_HEADER_REQ = 'POST_FILE_HEADER_REQ';
 export function postFileHeaderReq(fileHeader) {
