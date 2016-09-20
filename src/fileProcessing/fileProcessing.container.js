@@ -3,9 +3,9 @@
 import React from 'react';
 import { connect } from 'react-redux'
 import { browserHistory } from 'react-router'
-import { MODE_ENCRYPT, MODE_DECRYPT } from '../../../app/reducers'
-import  BusyLoader from '../../../components/pieces/busy_loader/busy_loader'
-import { fetchFileHeader } from '../../../actions'
+import { MODE_ENCRYPT, MODE_DECRYPT } from '../app/reducers'
+import  BusyLoader from './components/busyLoader'
+import { fetchFileHeader } from '../actions/index'
 
 
 class ProcessingPage extends React.Component {

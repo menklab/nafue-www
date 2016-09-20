@@ -1,5 +1,5 @@
 import * as FileSelectActions from './fileSelect.actions';
-import MODE_ENCRYPT from '../app/const'
+import {MODE_ENCRYPT} from '../app/const'
 
 const initialState = {
     mode: MODE_ENCRYPT

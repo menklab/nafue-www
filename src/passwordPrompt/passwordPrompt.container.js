@@ -5,8 +5,8 @@ import { connect } from 'react-redux'
 import { browserHistory } from 'react-router'
 import { MODE_ENCRYPT, MODE_DECRYPT } from '../app/const'
 import zxcvbn from 'zxcvbn';
-import PasswordInput from '../components/pieces/input/password_input/password_input'
-import PasswordStrengthIndicator from '../components/pieces/input/password_input/password_strength_indicator'
+import PasswordInput from './components/passwordInput'
+import PasswordStrengthIndicator from './components/passwordStrengthIndicator'
 import { passwordEntered } from './passwordPrompt.actions'
 
 
@@ -54,7 +54,6 @@ class PasswordPromptPage extends React.Component {
 }
 
 function mapStateToProps(state) {
-    console.log("state: ", state);
     return {
         file: state.fileSelect.file,
         mode: state.fileSelect.mode
